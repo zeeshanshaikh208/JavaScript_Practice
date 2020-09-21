@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <input type="text" id="inputAdd">
+    <button id="btnAdd">+</button>
+    <script>
+        //initial expense = 0
+        let totalExpense = 0;
+        const headingElement = document.querySelector("#heading");
+        headingElement.textContent=totalExpense;
+        const btnClick = document.querySelector("#btnAdd");
+         //add that input ibnto total expense
+         function addTotalExpense(){
+             //get the input from textinput
+        const expense = document.querySelector("#inputAdd").value;
+            totalExpense = totalExpense + parseInt(expense);
+            //console.log({totalExpense});
+            headingElement.textContent=totalExpense;
+         }
+        btnClick.addEventListener("click", addTotalExpense)
+    </script>
+</body>
+</html>
